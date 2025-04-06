@@ -1,84 +1,54 @@
-# Iris Flower Dataset Neural Network 
+# Iris Flower Dataset Neural Network – Deep Dive into Training
 
-![top language](https://img.shields.io/github/languages/top/gpt-null/template)
-![code size](https://img.shields.io/github/languages/code-size/gpt-null/template)
-![last commit](https://img.shields.io/github/last-commit/gpt-null/template)
-![issues](https://img.shields.io/github/issues/gpt-null/template)
-![contributors](https://img.shields.io/github/contributors/gpt-null/template)
+![Top Language](https://img.shields.io/github/languages/top/gpt-null/template)
+![Code Size](https://img.shields.io/github/languages/code-size/gpt-null/template)
+![Last Commit](https://img.shields.io/github/last-commit/gpt-null/template)
+![Issues](https://img.shields.io/github/issues/gpt-null/template)
+![Contributors](https://img.shields.io/github/contributors/gpt-null/template)
 ![License](https://img.shields.io/github/license/gpt-null/template)
 
-##### **A Statquest implementation of [Neural Networks Pt. 4: Multiple Inputs and Outputs](https://www.youtube.com/watch?v=83LYR-1IcjA&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=9)** see the video to better understand the process of this repo
-##### **Also a implementation of [Neural Networks Part 5: ArgMax and SoftMax](https://youtu.be/KpKog-L9veg?si=ue6ZtYQ0npXg6O7t)**
-## Description
-This project explores the underlying mathematics of neural networks by implementing a simple classifier for the Iris dataset with manually set weights and biases. See each calculation with Linear and ReLU to see the math behind the model.
+**A StatQuest-inspired implementation of a neural network, trained on the Iris dataset, with a focus on understanding cross-entropy loss and backpropagation.**
 
-![alt text](assets/iris_dataset_image.png)
+---
 
-## TLDR
-**A custom Neural network but instead of traning it i manually set the parameters to see the data flow through the model to see the underlying math.**
+## References
 
-## Project Overview
+### Core Concepts
 
-Rather than allowing a neural network to learn weights through training, this project:
-- Sets weights and biases manually
-- Implements custom linear transformations and ReLU activation functions
-- Visualizes decision boundaries in 3D space
-- Demonstrates how each component affects the final classification results
+- **[Neural Networks Part 6: Cross Entropy](https://www.youtube.com/watch?v=6ArSys5qHAU&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=12)**  
+  Introduction to the cross-entropy loss function used in classification.
 
-## Neural Network Architecture
+- **[Neural Networks Part 7: Cross Entropy Derivatives and Backpropagation](https://www.youtube.com/watch?v=xBEh66V9gZo&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=13)**  
+  Explains how to derive and implement the gradients of cross-entropy during backpropagation.
 
-The model has a simple architecture:
-- **Input Layer**: 2 nodes (petal_width, sepal_width)
-- **Hidden Layer**: 2 nodes with ReLU activation
-- **Output Layer**: 3 nodes (one for each Iris species: Setosa, Versicolor, Virginica)
+### Additional Background on Backpropagation
 
-![alt text](assets/output-onlinepngtools.png)
+- **[Neural Networks Part 2: Backpropagation – Main Ideas](https://www.youtube.com/watch?v=IN2XmBhILt4&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=5)**  
+  A high-level overview of how backpropagation works in neural networks.
 
-## Custom Implementation Details
+### Technical Deep Dives
 
-The neural network uses:
+- **[Backpropagation Details Part 1: Optimizing Three Parameters Simultaneously](https://www.youtube.com/watch?v=iyn2zdALii8&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=6)**  
+  Shows how optimizers update multiple parameters during training.
 
-1. **Manual Weight Initialization**:
-   ```python
-   # First layer weights and biases
-   weights1 = [[-2.5, 0.6],
-               [-1.5, 0.4]]
-   bias1 = [1.6, 0.7]
-   
-   # Second layer weights and biases
-   weights2 = [[-0.1, 1.5],
-               [2.4, -5.2],
-               [-2.2, 3.7]]
-   bias2 = [0.0, 0.0, 1.0]
-   ```
+- **[Backpropagation Details Part 2: Going Bonkers with the Chain Rule](https://www.youtube.com/watch?v=GKZoOHXGcLo&list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1&index=7)**  
+  A deeper exploration of the chain rule and how it's applied during backpropagation.
 
-2. **Custom Linear Transformation**:
-   - Matrix multiplication of inputs with weights
-   - Addition of bias term
-   
-3. **Custom ReLU Activation**:
-   - Element-wise function that returns max(0, x)
-   - Implemented manually to show the computation
+---
 
-## Visualizations
+![Visualization of Iris dataset layers and outputs](assets/iris_dataset_image.png)
 
-The project includes comprehensive 3D visualizations showing:
-- Probability surfaces for each class
-- Decision boundaries between the three species
-- How the feature space is divided based on the manually selected weights
+---
 
-![assets/](assets/output.png)
+## To-Do
 
-## Key Insights
-
-This implementation demonstrates:
-- How matrix operations and activation functions transform data through the network
-- The impact of specific weight values on classification boundaries
-- How a simple network with just 2 inputs and 2 hidden neurons can effectively separate the Iris classes
-- The mathematical operations underlying "black box" neural networks
-
-
-
+- [ ] Build a custom optimizer.
+- [ ] Refactor and clarify the backpropagation code.
+- [ ] Improve the structure and clarity of this README.
+- [ ] Clarify the mathematical explanations using example data.
+- [ ] Improve the written explanations throughout the codebase.
+- [ ] Clean the assets folder
+---
 
 ### LICENSE
 
